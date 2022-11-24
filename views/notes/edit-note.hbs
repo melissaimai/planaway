@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+  <!-- STYLE CSS -->
+  <link rel="stylesheet" href="/stylesheets/style-pages.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <a href="/dashboard">
+      <h1> <img src="/images/clock.png" width="80" height="80" alt="clock">
+        <strong>Plan</strong>Away
+      </h1>
+    </a>
+    <div class="logout-btn">
+      <a class="button-83" href="/logout">Logout</a>
+    </div>
+  </nav>
+
+  <div class="wrapper">
+    <div class="inner">
+
+      <div class="image-holder">
+        <img src="/images/drinkwater.png" alt="">
+      </div>
+
+      <form onsubmit="onSubmit()" action="/notes/{{note._id}}/edit" method="POST">
+
+        <h3>Edit Note</h3>
+
+        <div class="form-edit">
+          <span class="title-text3">Title : </span>
+          <textarea name="title" class="textarea2" rows="2" cols="30">{{note.title}}</textarea>
+        </div>
+
+        <div class="form-edit">
+          <span class="title-text3">Description : </span>
+          <textarea name="description" class="textarea2" rows="7" cols="45">{{note.description}}</textarea>
+        </div>
+
+        <div class="form-check">
+          <input class="title-text3" type="checkbox" value="done" {{#if note.taskDone}}checked{{/if}}
+            id="flexCheckDefault" name="checkbox" />
+          <label class="form-check-label" for="flexCheckDefault" for="flexCheckDefault">Task completed </label>
+        </div>
+
+
+        <div class="btn2">
+          <div class="submit-edit-btn">
+            <button class="main__button" value="submit">Submit Edit</button>
+          </div>
+        </div>
+      </form>
+
+
+
+    </div>
+  </div>
+  <script src="../js/jquery-3.3.1.min.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
