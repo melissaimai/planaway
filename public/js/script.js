@@ -166,7 +166,7 @@ async function showEvents() {
   let sidebarEvents = document.getElementById("sidebarEvents");
 
   const response = await axios.get(
-    `http://${window.location.host}/notes/` + selectedDate.toDateString()
+    `https://${window.location.host}/notes/` + selectedDate.toDateString()
   );
   const notesArray = response.data.data;
 
@@ -297,7 +297,7 @@ addEventButton.onclick = async function (e) {
   }
 
   axios
-    .post(`http://${window.location.host}/notes/create`, {
+    .post(`https://${window.location.host}/notes/create`, {
       title,
       description: desc,
       date: selectedDate.toISOString(),
