@@ -65,11 +65,11 @@ function createCalendar(date, side) {
         if (
           (selectedDayBlock == null && i == currentDate.getDate()) ||
           selectedDate.toDateString() ==
-            new Date(
-              currentDate.getFullYear(),
-              currentDate.getMonth(),
-              i
-            ).toDateString()
+          new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth(),
+            i
+          ).toDateString()
         ) {
           selectedDate = new Date(
             currentDate.getFullYear(),
@@ -95,11 +95,11 @@ function createCalendar(date, side) {
         //show marks
         if (
           globalEventObj[
-            new Date(
-              currentDate.getFullYear(),
-              currentDate.getMonth(),
-              i
-            ).toDateString()
+          new Date(
+            currentDate.getFullYear(),
+            currentDate.getMonth(),
+            i
+          ).toDateString()
           ]
         ) {
           let eventMark = document.createElement("div");
@@ -166,7 +166,7 @@ async function showEvents() {
   let sidebarEvents = document.getElementById("sidebarEvents");
 
   const response = await axios.get(
-    `http://localhost:3000/notes/` + selectedDate.toDateString()
+    `http://${window.location.host}/notes/` + selectedDate.toDateString()
   );
   const notesArray = response.data.data;
 
