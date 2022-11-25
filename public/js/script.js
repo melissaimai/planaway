@@ -300,7 +300,7 @@ addEventButton.onclick = async function (e) {
     .post(`https://${window.location.host}/notes/create`, {
       title,
       description: desc,
-      date: selectedDate.toDateString(),
+      date: selectedDate.toISOString(),
     })
     .then(() => {
       showEvents();
@@ -339,9 +339,9 @@ addEventListener("click", async (event) => {
 
   const selectDateString =
     selectedDate.getFullYear() +
-    ":" +
+    "-" +
     (selectedDate.getMonth() + 1) +
-    ":" +
+    "-" +
     selectedDate.getDate();
   const nextSevenDays = response.data.daily.time;
 
@@ -362,7 +362,7 @@ addEventListener("click", async (event) => {
               day: "numeric",
               month: "short",
             }) +
-            " : " +
+            " - " +
             response.data.daily.temperature_2m_max[index] +
             "°C";
         }
